@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube MP3/MP4 Downloader</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-download"></i> YouTube Downloader</h1>
+            <p>Konversi dan download video YouTube ke MP3 atau MP4 dengan mudah</p>
+        </header>
+
+        <main>
+            <div class="download-section">
+                <form id="downloadForm">
+                    <div class="input-group">
+                        <input type="url" id="youtubeUrl" placeholder="Masukkan URL YouTube di sini..." required>
+                        <button type="button" id="analyzeBtn">
+                            <i class="fas fa-search"></i> Analisis
+                        </button>
+                    </div>
+                </form>
+
+                <div id="videoInfo" class="video-info hidden">
+                    <div class="video-preview">
+                        <img id="videoThumbnail" src="" alt="Video Thumbnail">
+                        <div class="video-details">
+                            <h3 id="videoTitle"></h3>
+                            <p id="videoDuration"></p>
+                            <p id="videoChannel"></p>
+                        </div>
+                    </div>
+
+                    <div class="format-selection">
+                        <h3>Pilih Format Download:</h3>
+                        <div class="format-options">
+                            <div class="format-option">
+                                <input type="radio" id="mp3" name="format" value="mp3" checked>
+                                <label for="mp3">
+                                    <i class="fas fa-music"></i>
+                                    <span>MP3 Audio</span>
+                                    <small>Hanya audio, ukuran file kecil</small>
+                                </label>
+                            </div>
+                            <div class="format-option">
+                                <input type="radio" id="mp4" name="format" value="mp4">
+                                <label for="mp4">
+                                    <i class="fas fa-video"></i>
+                                    <span>MP4 Video</span>
+                                    <small>Video dengan audio, kualitas tinggi</small>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="quality-selection">
+                            <label for="quality">Kualitas:</label>
+                            <select id="quality">
+                                <option value="best">Terbaik</option>
+                                <option value="720p">720p</option>
+                                <option value="480p">480p</option>
+                                <option value="360p">360p</option>
+                            </select>
+                        </div>
+
+                        <button type="button" id="downloadBtn" class="download-btn">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                    </div>
+                </div>
+
+                <div id="progressSection" class="progress-section hidden">
+                    <h3>Progress Download:</h3>
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <p id="progressText">0%</p>
+                    <div id="downloadStatus" class="status-message"></div>
+                </div>
+
+                <div id="downloadComplete" class="download-complete hidden">
+                    <div class="success-message">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Download Selesai!</h3>
+                        <p>File berhasil dikonversi dan siap didownload.</p>
+                        <a id="downloadLink" href="#" download class="final-download-btn">
+                            <i class="fas fa-download"></i> Download File
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features">
+                <h2>Fitur Unggulan</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Cepat & Mudah</h3>
+                        <p>Konversi video dalam hitungan detik dengan antarmuka yang sederhana</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-hd-video"></i>
+                        <h3>Kualitas Tinggi</h3>
+                        <p>Mendukung berbagai kualitas dari 360p hingga 1080p</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Aman & Privat</h3>
+                        <p>Tidak menyimpan data pribadi, semua proses dilakukan secara lokal</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Responsive</h3>
+                        <p>Bekerja sempurna di desktop, tablet, dan smartphone</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 YouTube Downloader. Dibuat dengan ❤️</p>
+            <p><small>Disclaimer: Pastikan Anda memiliki hak untuk mendownload konten yang dipilih.</small></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
